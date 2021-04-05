@@ -1,5 +1,5 @@
 # project2
-1/3 of the project assignments for the course: CT30A3370 Käyttöjärjestelmät ja systeemiohjelmointi
+2/3 of the project assignments for the course: CT30A3370 Käyttöjärjestelmät ja systeemiohjelmointi
 
 There will be 4 different functions
 
