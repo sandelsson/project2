@@ -128,7 +128,7 @@ int main(int argc, char *argv[]){
 	*/
 	
 	if (argc < 2){
-		printf("Invalid number of parameters.\nUser format <word><file> ( file is voluntary )");
+		printf("Invalid number of parameters.\nUser format <word><file> ( file is voluntary )\n\n");
 		exit(0);
 	}
 
