@@ -20,8 +20,6 @@ int search_stdin(char search_word[40]){
 
 	char *line = NULL;
 	size_t len = 0;
-     
-     	char *x;
      	
      	char matching_lines[MAX][MAX];
      	
@@ -87,7 +85,6 @@ void search_file(char filename[40], char search_word[40]){
      char *line = NULL;
      size_t len = 0;
      
-     char *x;
      
      
      printf("These are the lines that contained the word '%s' in %s-file\n\n", search_word, filename);
