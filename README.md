@@ -5,7 +5,7 @@ There will be 4 different functions
 
 my-cat :: DONE
 
-my-grep :: NOT DONE
+my-grep :: DONE
 
 zip :: NOT DONE
 
