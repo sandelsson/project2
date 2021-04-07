@@ -1,3 +1,12 @@
+/*******************************************************************/
+/* Käyttäjärjestelmät ja systeemiohjelmointi
+ * Harjoitusprojekti: Project 1 
+ * Done by: Kukonlehto Joonas, Ruuskanen Santeri
+ * Date: 5.4.2021
+ * Source:
+ */
+/*******************************************************************/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
