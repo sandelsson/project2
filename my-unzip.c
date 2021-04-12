@@ -17,6 +17,7 @@ int main(int argc, char *argv[]){
 	char letter [10];
 	int number;
 	char filename[40];
+	int error;
 
 	/*Checks that the user gave the right amount of arguments */ 
 
@@ -36,9 +37,14 @@ int main(int argc, char *argv[]){
 	}
 
 	/*Goes throug the line taking the integer and letter after it and prints
-	the letter x amount of times */
+	the letter x amount of times, error handling if fscanf doenst get 2 values*/
 
-	while (fscanf(fp, "%d%c", &number, letter) != EOF){	
+	while ((error = fscanf(fp, "%d%c", &number, letter)) != EOF){	
+		if (error != 2 ){
+		fprintf(stderr, "Input doesnt follow the required syntax of dcdc... (d = Integer, c = Char \n");
+		exit(1);
+		}		
+		
 		for (int i=0; i < number; i++) {
 			printf("%s", letter);
 		
