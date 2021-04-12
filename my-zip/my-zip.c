@@ -3,7 +3,8 @@
  * Harjoitusprojekti: Project 2 
  * Done by: Kukonlehto Joonas, Ruuskanen Santeri
  * Date: 7.4.2021
- * Source: https://www.geeksforgeeks.org/run-length-encoding/
+ * Source: https://www.geeksforgeeks.org/run-length-encoding/, 
+https://stackoverflow.com/questions/19173442/reading-each-line-of-file-into-array/19174415
  */
 /*******************************************************************/
 
@@ -12,6 +13,9 @@
 #include <string.h>
 #define MAX_RLEN 50
 
+/* This program compresses one or multiple file(s) into one, it only compresses
+the files first line as in the example. Last given argument is the output file 
+and all files before that are used as input files. */
 
 /* Returns the Run Length Encoded string for the
 source string src */
@@ -57,10 +61,7 @@ char *encode(char *src){
     return dest;
 }
  
- 
- 
-#include <stdio.h>
-#include <stdlib.h>
+/* source: https://stackoverflow.com/questions/19173442/reading-each-line-of-file-into-array/19174415 */
 
 char *read_file(char filename[40]){
     int lines_allocated = 128;
@@ -122,19 +123,16 @@ char *read_file(char filename[40]){
 
 }
 
-/*driver program to test above function */
 int main(int argc, char *argv[])
 {
 
 	char inputfile[40];
 	char outputfile[40];
 	int linecount;
-	//char *words;
-	//char words[];
+
 	
 	if (argc < 3){
-		//perror("Invalid number of arguments\n");
-		fprintf(stderr,  "my-zip: <file1 file2\n");
+		fprintf(stderr,  "my-zip: <file1> <file2>...\n");
 		exit(1);
 	}
 	
@@ -142,7 +140,6 @@ int main(int argc, char *argv[])
 
 	
 	int i;
-	//char str[] = "aaaaaaaaaabbbbbbbbbbbbbbb";
 	
 	for(i = 1; i < argc-1; i++){
 		strcpy(inputfile, argv[i]);
