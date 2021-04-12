@@ -3,7 +3,7 @@
  * Harjoitusprojekti: Project 2 
  * Done by: Kukonlehto Joonas, Ruuskanen Santeri
  * Date: 7.4.2021
- * Source:
+ * Source: https://www.geeksforgeeks.org/run-length-encoding/
  */
 /*******************************************************************/
 
@@ -132,7 +132,7 @@ int main(int argc, char *argv[])
 	//char *words;
 	//char words[];
 	
-	if (argc != 3){
+	if (argc < 3){
 		//perror("Invalid number of arguments\n");
 		fprintf(stderr,  "my-zip: <file1 file2\n");
 		exit(1);
@@ -148,7 +148,7 @@ int main(int argc, char *argv[])
 		strcpy(inputfile, argv[i]);
 		char *words = read_file(inputfile);
 		char *res = encode(&words[0]);
-		printf("%s", res);
+		printf("%s ", res);
 		/*
 		for (int x = 0;x < 1 ;x++){
 			char *res = encode(&words[x]);
