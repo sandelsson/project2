@@ -129,6 +129,8 @@ int main(int argc, char *argv[])
 	char inputfile[40];
 	char outputfile[40];
 	int linecount;
+	char *res;
+	FILE *fp_write = NULL;
 
 	
 	if (argc < 3){
@@ -137,39 +139,24 @@ int main(int argc, char *argv[])
 	}
 	
 	strcpy(outputfile, argv[argc-1]);
-
+    	fp_write = fopen(outputfile, "w");
+	if (fp_write == NULL) {
+		fprintf(stderr, "error: cannot open file '%s'\n", outputfile);
+		exit(1);	
+	}
 	
 	int i;
 	
 	for(i = 1; i < argc-1; i++){
 		strcpy(inputfile, argv[i]);
 		char *words = read_file(inputfile);
-		char *res = encode(&words[0]);
+		res = encode(&words[0]);
 		printf("%s ", res);
-		/*
-		for (int x = 0;x < 1 ;x++){
-			char *res = encode(&words[x]);
-			//char *res = encode(str);
-			printf("%s", res);
-		}
-		*/
+		fprintf(fp_write, "%s", res);
 		
 	}
+	printf("%s depug", res);
 	
-			
-		
-	
-	/*for (int i = 1; i < argc-1; i++){
-		strcpy(inputfile, argv[i]);
-		//char* res = encode(str);
-		printf("%s", res);
-	}
-	*/
-	/*
-	char str[] = "geeksforgeeks";
-	char *res = encode(str);
-	printf("%s", res);
-	*/
 	
 	printf("\n");
 	
