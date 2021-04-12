@@ -128,16 +128,18 @@ int main(int argc, char *argv[])
 
 	char inputfile[40];
 	char outputfile[40];
-	int linecount;
 	char *res;
 	FILE *fp_write = NULL;
 
-	
+	/*Checks that the user gave recuired amount of arguments */	
+
 	if (argc < 3){
-		fprintf(stderr,  "my-zip: <file1> <file2>...\n");
+		fprintf(stderr,  "my-zip: <file1> <file2>... \n");
 		exit(1);
 	}
 	
+	/*Opening file and error handling */
+
 	strcpy(outputfile, argv[argc-1]);
     	fp_write = fopen(outputfile, "w");
 	if (fp_write == NULL) {
@@ -147,19 +149,17 @@ int main(int argc, char *argv[])
 	
 	int i;
 	
+	/* Writing the result to output file */
+
 	for(i = 1; i < argc-1; i++){
 		strcpy(inputfile, argv[i]);
 		char *words = read_file(inputfile);
 		res = encode(&words[0]);
-		printf("%s ", res);
 		fprintf(fp_write, "%s", res);
 		
 	}
-	printf("%s depug", res);
 	
-	
-	printf("\n");
-	
+	printf("Thank you for using our program you can check the results from %s file.\n", outputfile);
 	
 	return 0;
 }
