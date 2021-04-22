@@ -40,7 +40,6 @@ int main(int argc, char *argv[]){
     //fp = fopen(argv[1], "r");
     
     if (argc==1){
-    	printf("ANNA NIIT FILUI BOI!!!\n");
     	return 0;
     }
 
