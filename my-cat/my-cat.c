@@ -18,7 +18,6 @@ void read_file(int argc, int i, char filename[40]){
     fp = fopen(filename, "r");
     if (fp==NULL){
         printf("my-cat: cannot open file %s\n", filename);
-        //printf("Error when trying to open '%s' -file\n", filename);
         exit(0);
     }
     
@@ -34,10 +33,6 @@ void read_file(int argc, int i, char filename[40]){
 
 
 int main(int argc, char *argv[]){
-    //FILE *fp;
-    //strcpy(filename, argv[1]);
-
-    //fp = fopen(argv[1], "r");
     
     if (argc==1){
     	return 0;
